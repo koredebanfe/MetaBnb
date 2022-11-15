@@ -5,31 +5,54 @@ import homenft from '../img/homenft.png';
 const AboutMetaNftStyles = styled.section`
     background: linear-gradient(90deg, #A02279 11.45%, #A02279 11.45%);
     border: 1px solid #000000;
-    padding: 3em 2em;
     line-height: 2.5em;
+    text-align: center;
     color: #FFFFFF;
 
     button{
         border-radius: 8px;
         font-size: 1.2em;
-        padding: 0.5em 1em;
-        color: linear-gradient(90deg, #A02279 11.45%, #A02279 11.45%);
-        margin: 0 2em;
+        padding: 0.5rem 1rem;
+        color: #A02279;
     }
 
     h2 {
         font-weight: 700;
-        font-size: 2em;
-        margin-bottom: 1em;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        padding-top: 3rem;
     }
 
     p {
-        margin-bottom: 2em;
+        margin-bottom: 3rem;
     }
 
     img {
-        margin-top: 3em;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        max-width: 40vw;
     }
+
+    @media screen and (min-width:760px) {
+        padding-left: 3rem;
+padding-right: 3rem;
+
+		section {
+			display: flex;
+			text-align: left;
+			column-gap: 10vw;
+		}
+
+		article{
+			max-width: 40vw;
+			align-self: center;
+		}
+
+		.image__illustration{
+			align-self: center;
+            max-width: 100%;
+		}
+	}
 `
 
 function AboutMetaNft() {
@@ -51,7 +74,7 @@ function AboutMetaNft() {
             <button>Learn more</button>
         </article>
 
-        <div>
+        <div className='image__illustration'>
             <img src={homenft} alt='illustration' />
         </div>
 

@@ -5,31 +5,37 @@ import homeheadimg1 from '../img/homeheadimg1.png';
 import homeheadimg2 from '../img/homeheadimg2.png';
 import homeheadimg3 from '../img/homeheadimg3.png';
 import homeheadimg4 from '../img/homeheadimg4.png';
-import mbtoken from '../img/mbtokenimg.svg';
-import metamask from '../img/metamaskimg.svg';
-import opensea from '../img/opensea.svg';
 
 
 const HeaderStyles = styled.header`
+    text-align: center;
     h1 {
-		font-size: 3em;
-		padding: 2em;
+		font-size: 3rem;
+		margin-bottom: 2rem;
 	}
 
 	p{
 		font-weight: 400;
-		font-size: 1.5em;
-		line-height: 1.5em;
+		font-size: 1.5rem;
+		margin-bottom: 1.5rem;
+		line-height: 2rem;
 	}
 
-	img{
-		display: block;
-		max-width: 20vw;
-		margin-top: 1em;
+	.home__image{
+		display: flex;
+		max-width: 70vw;
+		margin: 0 auto;
+		margin-top: 4rem;
+		
+	}
+
+	.item1 {
+		margin-top: 3rem;
+		margin-right: 1rem;
 	}
 
     div #brand__sponsor {
-		background: linear-gradient(90deg, #A02279 11.45%, #A02279 11.45%);
+		background-color: #A02279;
 	}
 
 	span {
@@ -41,17 +47,39 @@ const HeaderStyles = styled.header`
 	}
 
 	form {
-		margin-top: 1em;
-		margin-bottom: 1em;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
 	}
 
 	input {
-		padding: 0.5em 1em;
+		padding: 0.5rem 1rem;
+		outline: none;
 	}
 
-	label {
+	button {
 		background-color: #A02279;
 		color: whitesmoke;
+		padding: 0.6rem 1rem;
+		font-size: 1rem;
+	}
+
+	@media screen and (min-width:760px) {
+		padding-left: 3rem;
+padding-right: 3rem;
+		section {
+			display: flex;
+			text-align: left;
+			column-gap: 10vw;
+		}
+
+		article{
+			max-width: 50vw;
+			align-self: center;
+		}
+
+		.home__image{
+			align-self: center;
+		}
 	}
 `
 
@@ -75,33 +103,28 @@ function Header() {
 				</p>
 
 				<form name='searchLocation'>
-					<input type='search' id='location' name='location' 
+					
+					 <label htmlFor='location'>
+					 <input type='search' id='location' name='location' 
 					 placeholder='Search for location'/>
-					 <label htmlFor='location'>Search</label>
+					 </label>
+					 <button>Search</button>
 				</form>
 			</article>
 
 			<div className='home__image'>
-				<div>
+				<div className='item1'>
 					<img src={homeheadimg1} alt='illustration' />
 					<img src={homeheadimg3} alt='illustration' />
 				</div>
-				<div>
+				<div className='item2'>
 				    <img src={homeheadimg2} alt='illustration' />
-				
 				    <img src={homeheadimg4} alt='illustration' />
 				</div>
 				
 				
 			</div>
 		</section>
-
-		<div id='brand__sponsor'>
-			<img src={mbtoken} alt='mbtoken logo'/>
-			<img src={metamask} alt='metamask logo'/>
-			<img src={opensea} alt='opensea logo'/>
-		</div>
-
     </header>
 	</HeaderStyles>
   )

@@ -1,14 +1,14 @@
-import React from 'react';
-import {Routes, Route} from 'react-router-dom'
-import {createGlobalStyle} from 'styled-components'
-import Home from './components/Home';
-import PlaceToStay from './components/PlaceToStay';
-
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { createGlobalStyle } from "styled-components";
+import Home from "./components/Home";
+import PlaceToStay from "./components/PlaceToStay";
 
 const GlobalStyle = createGlobalStyle`
     * {
       padding: 0;
       margin: 0;
+      box-sizing: border-box;
     }
 
     img {
@@ -18,19 +18,20 @@ const GlobalStyle = createGlobalStyle`
 
     button {
       border: none;
+      cursor: pointer;
+      background-color: white;
     }
-`
+`;
 
 function App() {
   return (
-	<>
-	   <GlobalStyle />
-	   <Routes>
-		    <Route path='/' element={<Home />} />
-		    <Route path='placetostay' element={<PlaceToStay />} />
-       </Routes>
-	</>
-    
+    <>
+      <GlobalStyle />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="placetostay" element={<PlaceToStay />} />
+      </Routes>
+    </>
   );
 }
 
