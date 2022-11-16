@@ -34,10 +34,7 @@ const HeaderStyles = styled.header`
 		margin-right: 1rem;
 	}
 
-    div #brand__sponsor {
-		background-color: #A02279;
-	}
-
+    
 	span {
 		color: #A02279;
 	}

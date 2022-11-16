@@ -7,12 +7,17 @@ import openseas from "../img/openseas.png";
 const BrandStyles = styled.section`
   background-color: #a02279;
   padding: 2rem 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   
+  display:flex;
+  justify-content: space-between;
 
-  img {
-    max-width: 100%;
-    height: auto;
+  img{
+    display: inline-block;
+    margin-right: 9rem;
   }
+  
   `
 
 
@@ -20,17 +25,18 @@ function Brand() {
   return (
     <BrandStyles>
       <section>
-        <div>
+
+        
           <img src={mbtoken} alt="mbtoken" />
-        </div>
+       
 
-        <div>
+      
           <img src={metamask} alt="metamask" />
-        </div>
+      
 
-        <div>
+       
           <img src={openseas} alt="openseas" />
-        </div>
+       
       </section>
     </BrandStyles>
   );

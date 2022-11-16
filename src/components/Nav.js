@@ -41,6 +41,11 @@ const NavStyles = styled.nav`
     border-bottom: 2px solid #a02279;
   }
 
+  .nav__content {
+    transform: ${({ open }) =>
+      open ? "translateX(0%);" : "translateX(-100%;"};
+  }
+
   @media screen and (min-width: 760px) {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -97,6 +102,7 @@ const ModalStyles = styled.section`
 Modal.setAppElement("#root");
 function Nav() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [navOpen, setNavOpen] = useState(false);
 
   return (
     <div>
@@ -106,14 +112,22 @@ function Nav() {
             <div>
               <img src={headerlogo} alt="Meta logo" />
             </div>
+
             <div className="toggle__btn">
-              <buuton className="toggle__btn__open">
+              <button
+                className="toggle__btn__open"
+                onClick={() => setNavOpen(!navOpen)}
+              >
                 <img src={openBtn} alt="open button" />
-              </buuton>
+              </button>
+
+              <button className="toggle__btn__close">
+                <img src={closeBtn} alt="close button" />
+              </button>
             </div>
           </div>
 
-          <div className="nav__content">
+          <div className="nav__content" navOpen={navOpen}>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/placetostay">Place To Stay</NavLink>
 
@@ -142,6 +156,7 @@ function Nav() {
             position: "absolute",
             top: "5rem",
             height: "60vw",
+            maxWidth: "40vw",
             borderRadius: "10px",
           },
         }}
@@ -179,4 +194,4 @@ function Nav() {
   );
 }
 
-export default Nav
+export default Nav;
