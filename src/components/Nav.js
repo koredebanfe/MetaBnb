@@ -44,11 +44,7 @@ const NavStyles = styled.nav`
   padding-left: 3rem;
     padding-right: 3rem;
 
-    @media screen and (max-width: 760px) {
-      body {
-        text-align: center;
-      }
-    }
+    
 
   @media screen and (min-width: 760px) {
     padding-left: 3rem;
