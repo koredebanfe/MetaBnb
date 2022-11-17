@@ -7,7 +7,7 @@ import metamask from "../img/placemetamask.png";
 import walletconnect from "../img/walletconnect.png";
 import arrow from "../img/arrow.png";
 import closeBtn from "../img/icon-close.svg";
-import openBtn from "../img/icon-hamburger.svg";
+
 
 const NavStyles = styled.nav`
   margin-top: 2rem;
