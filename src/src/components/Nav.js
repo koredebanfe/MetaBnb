@@ -41,14 +41,10 @@ const NavStyles = styled.nav`
     border-bottom: 2px solid #a02279;
   }
 
-  padding-left: 3rem;
-    padding-right: 3rem;
-
-    @media screen and (max-width: 760px) {
-      body {
-        text-align: center;
-      }
-    }
+  .nav__content {
+    transform: ${({ open }) =>
+      open ? "translateX(0%);" : "translateX(-100%;"};
+  }
 
   @media screen and (min-width: 760px) {
     padding-left: 3rem;
@@ -60,7 +56,6 @@ const NavStyles = styled.nav`
     button,
     a {
       display: inline-block;
-      margin-right: 2rem;
     }
 
     .other__links {
@@ -78,11 +73,6 @@ const NavStyles = styled.nav`
       display: flex;
       max-width: 50vw;
       justify-content: space-around;
-    }
-
-    .nav__content a
-     {
-      margin-top: 1rem;
     }
   }
 `;
@@ -112,7 +102,7 @@ const ModalStyles = styled.section`
 Modal.setAppElement("#root");
 function Nav() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  
+  const [navOpen, setNavOpen] = useState(false);
 
   return (
     <div>
@@ -122,9 +112,22 @@ function Nav() {
             <div>
               <img src={headerlogo} alt="Meta logo" />
             </div>
+
+            <div className="toggle__btn">
+              <button
+                className="toggle__btn__open"
+                onClick={() => setNavOpen(!navOpen)}
+              >
+                <img src={openBtn} alt="open button" />
+              </button>
+
+              <button className="toggle__btn__close">
+                <img src={closeBtn} alt="close button" />
+              </button>
+            </div>
           </div>
 
-          <div className="nav__content">
+          <div className="nav__content" navOpen={navOpen}>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/placetostay">Place To Stay</NavLink>
 
@@ -152,9 +155,8 @@ function Nav() {
             padding: "1rem",
             position: "absolute",
             top: "5rem",
-           left: "6rem",
-            height: "300px",
-            maxWidth: "400px",
+            height: "60vw",
+            maxWidth: "40vw",
             borderRadius: "10px",
           },
         }}
